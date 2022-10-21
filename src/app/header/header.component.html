@@ -1,0 +1,79 @@
+<!--<section class="container forms">
+  <div class="form login">
+      <div class="form-content">
+          <header>Admin Login</header>
+          <form action="#">
+              <div class="field input-field">
+                  <input type="email" placeholder="Email" class="input">
+              </div>
+
+              <div class="field input-field">
+                  <input type="password" placeholder="Password" class="password">
+                  <i class='bx bx-hide eye-icon'></i>
+              </div>
+
+
+
+
+
+
+          </form>
+
+          <div class="form-link">
+              <span><a href="/articles" class="link signup-link">Login</a></span><br>
+              <span>Are You A New USer?</span><br> <a href="/lat" class="link signup-link">SignUp</a>
+          </div>
+      </div>
+  </div>
+</section>!-->
+
+<!-- Login form-->
+<section class="container forms">
+  <div class="form login">
+<div class="container container-styles">
+	<div class="col-xs-7 col-xs-offset-3">
+		<div class="panel panel-primary">
+
+			<div class="panel-heading"><h1 style="align-items: center;">Admin Login</h1></div>
+			<div class="panel-body padding">
+				<form class="form-horizontal" [formGroup]="headerform">
+					<div class="form-group" >
+						<label for="name" class="col-xs-4 control-label" style="text-align:left">User Name</label>
+						<div class="col-xs-8">
+							<input type="text" class="form-control" [ngClass]="{'valid':headerform.controls['userName'].valid, 'invalid':headerform.controls['userName'].invalid && !headerform.controls['userName'].pristine}" formControlName="userName">
+							<div *ngIf="headerform.controls['password'].errors && headerform.controls['userName'].dirty">
+							<div *ngIf="headerform.controls['userName'].errors?.['required']" style="color:red">EmailID is required/Enter Correct EmailID
+							</div>
+						</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="password" class="col-xs-4 control-label" style="text-align:left">Password</label>
+						<div class="col-xs-8">
+							<input type="password" class="form-control" [ngClass]="{'valid':headerform.controls['password'].valid, 'invalid':headerform.controls['password'].invalid && !headerform.controls['password'].pristine}" formControlName="password">
+							<div *ngIf="headerform.controls['password'].errors && headerform.controls['password'].dirty">
+							<div *ngIf="headerform.controls['password'].errors?.['required']" style="color:red">Password is required/Enter Correct Password
+							</div>
+						</div>
+						</div>
+					</div>
+
+					<div *ngIf="!valid" class="error">Invalid Credentials...Please try again...</div>
+					<br />
+
+					<div class="form-group">
+						<span class="col-xs-4"></span>
+						<div class="col-xs-3">
+              <a href="/articles" class="link signup-link">Login</a>
+
+						</div>
+
+              <span>Are You A New USer?</span><br> <a href="/lat" class="link signup-link">SignUp</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</section>

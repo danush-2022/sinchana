@@ -1,0 +1,60 @@
+<section class="container forms">
+  <div class="form login">
+<div class="container container-styles">
+	<div class="col-xs-7 col-xs-offset-3">
+		<div class="panel panel-primary">
+
+			<div class="panel-heading"><h1 style="align-items: center;">User SignUp</h1></div>
+			<div class="panel-body padding">
+				<form class="form-horizontal" [formGroup]="latestform">
+					<div class="form-group" >
+						<label for="name" class="col-xs-4 control-label" style="text-align:left">User Name</label>
+						<div class="col-xs-8">
+							<input type="text" class="form-control" [ngClass]="{'valid':latestform.controls['userName'].valid, 'invalid':latestform.controls['userName'].invalid && !latestform.controls['userName'].pristine}" formControlName="userName">
+							<div *ngIf="latestform.controls['password'].errors && latestform.controls['userName'].dirty">
+							<div *ngIf="latestform.controls['userName'].errors?.['required']" style="color:red">EmailID is required/Enter Correct EmailID
+							</div>
+						</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="password" class="col-xs-4 control-label" style="text-align:left">Password</label>
+						<div class="col-xs-8">
+							<input type="password" class="form-control" [ngClass]="{'valid':latestform.controls['password'].valid, 'invalid':latestform.controls['password'].invalid && !latestform.controls['password'].pristine}" formControlName="password">
+							<div *ngIf="latestform.controls['password'].errors && latestform.controls['password'].dirty">
+							<div *ngIf="latestform.controls['password'].errors?.['required']" style="color:red">Password is required/Enter Correct Password
+							</div>
+						</div>
+						</div>
+					</div>
+
+          <div class="form-group">
+						<label for="password" class="col-xs-4 control-label" style="text-align:left">Re-enter Password</label>
+						<div class="col-xs-8">
+							<input type="password" class="form-control" [ngClass]="{'valid':latestform.controls['password'].valid, 'invalid':latestform.controls['password'].invalid && !latestform.controls['password'].pristine}" formControlName="password">
+							<div *ngIf="latestform.controls['password'].errors && latestform.controls['password'].dirty">
+							<div *ngIf="latestform.controls['password'].errors?.['required']" style="color:red">Password is required/Enter Correct Password
+							</div>
+						</div>
+						</div>
+					</div>
+
+					<div *ngIf="!valid" class="error">Invalid Credentials...Please try again...</div>
+					<br />
+
+					<div class="form-group">
+						<span class="col-xs-4"></span>
+						<div class="col-xs-3">
+              <a href="/sign" class="link signup-link">Login</a>
+
+						</div>
+
+              <span>Are You A New USer?</span><br> <a href="/sign" class="link signup-link">SignUp</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</section>
